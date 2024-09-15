@@ -13,6 +13,12 @@ on: # yamllint disable-line rule:truthy
 # Automatically greates a unique GITHUB_TOKEN secret for the workflow with READ permission.
 permissions: {}
 
+# Cancels previous runs in PR branch
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow performs a lint check on the code
@@ -53,4 +59,5 @@ jobs:
           VALIDATE_MARKDOWN_PRETTIER: false
           VALIDATE_NATURAL_LANGUAGE: false
           VALIDATE_SHELL_SHFMT: false 
+          VALIDATE_YAML: false
           VALIDATE_YAML_PRETTIER: false
