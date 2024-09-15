@@ -1,0 +1,36 @@
+{
+  "name": "saints-api",
+  "version": "1.0.0",
+  "description": "Saints API service (tutorial)",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node .",
+    "lint": "npx eslint ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheBookKnight/saints-api.git"
+  },
+  "keywords": [
+    "catholic",
+    "saints",
+    "api",
+    "javascript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheBookKnight/saints-api/issues"
+  },
+  "homepage": "https://github.com/TheBookKnight/saints-api#readme",
+  "dependencies": {
+    "express": "^4.21.0",
+    "globals": "^15.9.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "eslint": "^9.10.0"
+  }
+}
