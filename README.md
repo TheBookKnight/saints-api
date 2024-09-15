@@ -43,3 +43,19 @@ Install the following:
 **Docker** helps developers build, share, run, and verify applications anywhere — without tedious environment configuration or management
 
 **[MongoDB](https://www.mongodb.com/)** is a powerful, open-source, document-oriented NoSQL database designed to handle large volumes of data and provide high performance, high availability, and easy scalability.
+
+### Step 1: Create GET Request
+
+We'll create a GET request to retrieve an individual saint's data.
+
+1. You'll need to setup a _.env_ file and add the `ATLAS_URI` connection string with the `PORT` number.
+   1. In this tutorial, it'll be `ATLAS_URI=mongodb://localhost/` and `PORT=27017`
+2. To load these environment variables, you'll need to install the **[dotenv](https://www.npmjs.com/package/dotenv)** NPM library via `npm install dotenv`
+3. Then, add below at the top of the _index.js_ file. This script does the loading.
+
+```
+import dotenv from "dotenv";
+dotenv.config();
+```
+
+4. You'll need to build a module to connect to the database. Install MongoDB via `npm install mongodb`
