@@ -10,9 +10,6 @@ on: # yamllint disable-line rule:truthy
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Automatically greates a unique GITHUB_TOKEN secret for the workflow with READ permission.
-permissions: {}
-
 # Cancels previous runs in PR branch
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -25,32 +22,36 @@ jobs:
   lint:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    # To report GitHub Actions status checks
-    permissions:
-      contents: read
-      packages: read
-      statuses: write
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-        with:
-          # super-linter needs the full git history to get the
-          # list of files that changed across commits
-          fetch-depth: 0
 
       # Setup Node
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
+          node-version-file: '.nvmrc'
+
+      # Caches dependencies
+      - name: Cache Node Modules
+        id: cache 
+        uses: actions/cache@v4
+        with:
+          path: |
+            node_modules
+          key: modules-${{ hashFiles('package-lock.json') }}
+      
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
 
       # Run Lint check
       - name: Lint Check
-        uses: super-linter/super-linter@v7.1.0
-        env:
-          # To report GitHub Actions status checks
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          LINTER_RULES_PATH: /
-          JAVASCRIPT_ES_CONFIG_FILE: eslint.config.js
-          VALIDATE_JAVASCRIPT_ES: true
+        uses: tj-actions/eslint-changed-files@v25
+        with:
+          skip_annotations: "true"
+          config_path: "eslint.config.js"
+          file_extensions: |
+            **/*.js
+      
