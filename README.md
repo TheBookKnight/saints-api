@@ -10,8 +10,11 @@ Install the following:
 
 - [ ] [NodeJS](https://nodejs.org/en). I used Node v22.
   - [ ] Then, run `npm init` to setup a _package.json_ file. This file is used as a manifest, storing information about applications, modules, packages, and more.
+  - [ ] Add `"type": "module` to the _package.json_
   - [ ] Install [Express](https://expressjs.com/en/starter/installing.html) via `npm install express --save`
-  - [ ] [ESLint](https://eslint.org/docs/latest/use/getting-started)
+  - [ ] Install [ESLint](https://eslint.org/docs/latest/use/getting-started) via `npm install --save-dev eslint @eslint/js`
+    - [ ] Create an ESLint config (_eslint.config.js_) to setup code rules. See the file for what rules to add.
+    - [ ] In the _package.json_, add npm script `"lint": "npx eslint ./"`. So, to run the linter, you can use `npm run lint`
 - [ ] [Docker](https://docs.docker.com/engine/install/)
   - [ ] Will need to pull [Mongo image](https://hub.docker.com/_/mongo) for storing data.
 
