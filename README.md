@@ -9,9 +9,9 @@ This is a tutorial on how to build an API service.
 Install the following:
 
 - [ ] [NodeJS](https://nodejs.org/en). I used Node v22.
-  - [ ] Then run `npm init` to setup a _package.json_ file. This file is used as a manifest, storing information about applications, modules, packages, and more.
-- [ ] [Express](https://expressjs.com/en/starter/installing.html)
-- [ ] [ESLint](https://eslint.org/docs/latest/use/getting-started)
+  - [ ] Then, run `npm init` to setup a _package.json_ file. This file is used as a manifest, storing information about applications, modules, packages, and more.
+  - [ ] Install [Express](https://expressjs.com/en/starter/installing.html) via `npm install express --save`
+  - [ ] [ESLint](https://eslint.org/docs/latest/use/getting-started)
 - [ ] [Docker](https://docs.docker.com/engine/install/)
   - [ ] Will need to pull [Mongo image](https://hub.docker.com/_/mongo) for storing data.
 
