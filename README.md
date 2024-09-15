@@ -29,7 +29,7 @@ Install the following:
   - [ ] Will need to pull [Mongo image](https://hub.docker.com/_/mongo) for storing data via `docker pull mongo`.
   - [ ] Create a _docker-compose.yml_. See the file for configuration.
   - [ ] The database is working properly if you can run `make start import`. Shut it down via `make stop`
-  - You can use [the Mongo Compass tool](https://www.mongodb.com/try/download/compass) to view the data inside.
+    - You can use [the Mongo Compass tool](https://www.mongodb.com/try/download/compass) to view the data inside. You should be able to see database "api" with the collection "saints". This collection should have several saints.
 
 **Node.js®** is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.
 
