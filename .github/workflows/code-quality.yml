@@ -46,18 +46,11 @@ jobs:
           node-version: 22
 
       # Run Lint check
-      - name: Super-linter
+      - name: Lint Check
         uses: super-linter/super-linter@v7.1.0
         env:
           # To report GitHub Actions status checks
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          LINTER_RULES_PATH: /
           JAVASCRIPT_ES_CONFIG_FILE: eslint.config.js
-          VALIDATE_JSCPD: false
-          VALIDATE_JSON: false
-          VALIDATE_JSON_PRETTIER: false
-          VALIDATE_MARKDOWN: false
-          VALIDATE_MARKDOWN_PRETTIER: false
-          VALIDATE_NATURAL_LANGUAGE: false
-          VALIDATE_SHELL_SHFMT: false 
-          VALIDATE_YAML: false
-          VALIDATE_YAML_PRETTIER: false
+          VALIDATE_JAVASCRIPT_ES: true
