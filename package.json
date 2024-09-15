@@ -28,7 +28,8 @@
   "dependencies": {
     "dotenv": "^16.4.5",
     "express": "^4.21.0",
-    "globals": "^15.9.0"
+    "globals": "^15.9.0",
+    "mongodb": "^6.9.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.10.0",
