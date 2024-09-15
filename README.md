@@ -8,6 +8,7 @@ This is a tutorial on how to build an API service.
 
 Create the following:
 
+- [ ] Copy the _index.js_ file from this tutorial and paste it in the root directory.
 - [ ] Create the _data_ subdirectory. Copy the _saints.json_ file from this tutorial and paste it in here. This will have the data examples.
 - [ ] Create the _scripts_ subdirectory. Copy the _saints.sh_ file from this tutorial and paste it in here. This script will import the data.
 - [ ] Add a _.gitignore_ file and add `node_modules` to it. We don't want to commit any of those files to the Git repo.
@@ -21,8 +22,10 @@ Install the following:
   - [ ] Add `"type": "module` to the _package.json_
 
   - [ ] Install [Express](https://expressjs.com/en/starter/installing.html) via `npm install express --save`
+    - [ ] Add npm script `"start": "node ."`. So, when you run `npm run start`, it starts the API service. When you navigate to http://localhost:3000/, you'll see a "Hello World!" Stop the service via pressing CTRL + C at the same time.
   - [ ] Install [ESLint](https://eslint.org/docs/latest/use/getting-started) via `npm install --save-dev eslint @eslint/js`
     - [ ] Create an ESLint config (_eslint.config.js_) to setup code rules. See the file for what rules to add.
+    - [ ] Run `npm install globals`
     - [ ] In the _package.json_, add npm script `"lint": "npx eslint ./"`. So, to run the linter, you can use `npm run lint`
 
 - [ ] Install [Docker](https://docs.docker.com/engine/install/).
