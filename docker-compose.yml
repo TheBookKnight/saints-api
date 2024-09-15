@@ -1,0 +1,13 @@
+services:
+  data:
+    image: "mongo:latest"
+    container_name: data
+    volumes:
+      - type: bind
+        source: ${PWD}/data
+        target: /data
+      - type: bind
+        source: ${PWD}/scripts
+        target: /scripts
+    ports:
+      - 27017:27017
