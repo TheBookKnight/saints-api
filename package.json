@@ -1,0 +1,25 @@
+{
+  "name": "saints-api",
+  "version": "1.0.0",
+  "description": "Saints API service (tutorial)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheBookKnight/saints-api.git"
+  },
+  "keywords": [
+    "catholic",
+    "saints",
+    "api",
+    "javascript"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheBookKnight/saints-api/issues"
+  },
+  "homepage": "https://github.com/TheBookKnight/saints-api#readme"
+}
