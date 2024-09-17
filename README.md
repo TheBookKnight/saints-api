@@ -75,3 +75,21 @@ dotenv.config();
 
 7. When you run the app via `npm run start`, you can check if the route works via `curl http://localhost:3000/saints/{ID}`. You can get the `ID` from the _saints.json_ file.
    1. Example `curl http://localhost:3000/saints/66e66e3d023667249e24853b`
+
+### Step 2: Create GET Request (of a list of saints)
+
+We'll create a GET request to retrieve a list of saints.
+
+Inside the _saints.js_ file created in the previous step, add the following below. So by default, it should return at least 50 saints.
+
+Right now, we only have three so we should see a list of 3 saints.
+
+```
+router.get("/", async (req, res) => {
+    let collection = await db.collection("saints");
+    let results = await collection.find({})
+        .limit(50)
+        .toArray();
+    res.send(results).status(200);
+});
+```

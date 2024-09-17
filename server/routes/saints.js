@@ -13,4 +13,13 @@ router.get("/:id", async (req, res) => {
     else res.send(result).status(200);
 })
 
+// Get a list of 50 saints
+router.get("/", async (req, res) => {
+    let collection = await db.collection("saints");
+    let results = await collection.find({})
+        .limit(50)
+        .toArray();
+    res.send(results).status(200);
+});
+
 export default router;
