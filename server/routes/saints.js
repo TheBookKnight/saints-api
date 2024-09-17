@@ -17,7 +17,7 @@ router.get("/:id", async (req, res) => {
 router.get("/", async (req, res) => {
     let collection = await db.collection("saints");
     let results = await collection.find({})
-        .limit(50)
+        .limit(50) // sends at most a batch of 50 saints
         .toArray();
     res.send(results).status(200);
 });

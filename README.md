@@ -82,7 +82,7 @@ We'll create a GET request to retrieve a list of saints.
 
 Inside the _saints.js_ file created in the previous step, add the following below. So by default, it should return at least 50 saints.
 
-Right now, we only have three so we should see a list of 3 saints.
+Right now, we only have three so we should see a list of 3 saints. Later in the tutorial, we'll import more saints and teach you about pagination.
 
 ```
 router.get("/", async (req, res) => {
